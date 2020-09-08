@@ -1,0 +1,188 @@
+body {
+  background-image: radial-gradient(
+    circle,
+    rgb(76, 205, 231) 0%,
+    rgba(130, 102, 233, 0.699) 57%,
+    rgb(216, 151, 205) 100%
+  );
+  width: 100%;
+  height: auto;
+}
+.App {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.show {
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: black;
+  margin-right: -905px;
+  padding: 3px solid black;
+  color: white;
+  position: absolute;
+}
+.col-xl-4 {
+  margin-top: -200px;
+  margin-left: 300px;
+}
+.col-xl-5 {
+  margin-top: -335px;
+  margin-left: 600px;
+}
+.App-logo {
+  height: 40vmin;
+
+  pointer-events: none;
+}
+.btn-pink {
+  background-color: palevioletred;
+  border-radius: 5px;
+  margin-left: 10px;
+  outline: none;
+  color: white;
+}
+input {
+  border-radius: 5px;
+  outline: none;
+}
+.btn-blue {
+  background-color: rgb(96, 96, 243);
+  border-radius: 5px;
+  margin-left: 10px;
+  outline: none;
+  color: white;
+}
+textarea {
+  visibility: hidden;
+}
+.btn {
+  opacity: 0.5;
+  border-radius: 5px;
+  font-size: medium;
+  width: 50px;
+  height: 35px;
+  border-top: 450px;
+  background-color: rgba(66, 19, 5, 0.973);
+  margin-right: 3px;
+  color: white;
+}
+.col-xl-1 {
+  margin-top: 10px;
+}
+.baby {
+  text-align: justify;
+  max-width: 500px;
+  color: white;
+  margin: auto;
+  padding: 2px 2px 2px 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 30s linear;
+  }
+}
+
+.App-header {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: translateY(10px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 1px 8px 8px 3px;
+  cursor: pointer;
+  background-color: transparent;
+}
+h4 {
+  visibility: hidden;
+}
+.jumbotron {
+  background-color: inherit;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+@media only screen and (max-width: 600px) {
+  .App {
+    width: 100%;
+  }
+  .card {
+    width: 200px !important;
+  }
+  .inputText {
+    width: 90px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .App {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  /* For mobile phones: */
+  .App {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 1608px) {
+  /* For mobile phones: */
+  .App {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .App {
+    width: 100%;
+  }
+  .inputText {
+    width: 100%;
+  }
+  .card {
+    width: 90vw;
+  }
+}
+@media only screen and (min-width: 300px) {
+  /* For tablets: */
+  .App {
+    width: 100%;
+  }
+  .card {
+    width: 90vw;
+  }
+  .inputText {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 200px) {
+  /* For tablets: */
+  .App {
+    width: 100%;
+  }
+}

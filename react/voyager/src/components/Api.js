@@ -95,7 +95,11 @@ function Api() {
         </Button>
       </Form>
 
-      {state.results.length === 0 ? <Fetch /> : <Cards name={state.results} />}
+      {state.results.length === 0 ? (
+        <Fetch />
+      ) : (
+        <Cards address={state.address} name={state.results} />
+      )}
     </div>
   );
 }

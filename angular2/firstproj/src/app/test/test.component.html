@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to my website</h1>
+  <p class="lead">Jumbo helper text</p>
+  <hr class="my-2" />
+  <p>More info</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button"
+      >Jumbo action name</a
+    >
+    {{ testvariable }}
+  </p>
+  <div>You can check all your details here</div>
+  <input [(ngModel)]="obj.name" #ctrl="ngModel" required />
+  <p>{{ obj.name }}</p>
+</div>

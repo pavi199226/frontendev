@@ -110,7 +110,7 @@ class Fetch extends React.Component {
               <hr />
 
               {this.state.results.length === 0 ? null : (
-                <Cards name={this.state.results} />
+                <Cards address={this.state.address} name={this.state.results} />
               )}
             </div>
           </div>

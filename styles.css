@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: center;
+}
+.heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: red;
+  align-self: center;
+  font-size: 100px;
+}
+.input {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  justify-content: center;
+  padding-top: 50px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-self: center;
+  align-content: space-around;
+}
+.listitem {
+  list-style-type: circle;
+}
+.outer {
+}
+.tri {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid green;
+  border-right: 100px solid transparent;
+  transform: rotate(180deg);
+  width: 0px;
+  height: 0px;
+}

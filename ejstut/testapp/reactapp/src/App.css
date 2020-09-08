@@ -1,23 +1,52 @@
+body {
+  background-image: radial-gradient(
+    circle,
+    rgb(76, 205, 231) 0%,
+    rgba(130, 102, 233, 0.699) 57%,
+    rgb(216, 151, 205) 100%
+  );
+  width: 100%;
+  height: auto;
+}
 .App {
   text-align: center;
+  widows: 100%;
+  height: auto;
 }
 
+.show {
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: black;
+  margin-right: -905px;
+  padding: 3px solid black;
+  color: white;
+  position: absolute;
+}
+.col-xl-4 {
+  margin-top: -200px;
+  margin-left: 300px;
+}
+.col-xl-5 {
+  margin-top: -295px;
+  margin-left: 600px;
+}
 .App-logo {
   height: 40vmin;
+  margin-left: -1000px;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 10s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -30,9 +59,62 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    transform: translateY(150px);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-250px);
+  }
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 1px 8px 8px 3px;
+  cursor: pointer;
+}
+h4 {
+  visibility: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+@media (min-width: 576px) {
+  .container-sm,
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 992px) {
+  .page-section .page-section-heading {
+    font-size: 3rem;
+    line-height: 2.5rem;
   }
 }
