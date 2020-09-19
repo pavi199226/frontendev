@@ -1,0 +1,174 @@
+body {
+  color: black;
+  background: rgb(233, 112, 31);
+  background: linear-gradient(
+    90deg,
+    rgb(221, 90, 29) 0%,
+    rgb(245, 72, 101) 100%
+  );
+}
+.heading {
+  text-align: center;
+}
+.image {
+  width: 50%;
+  height: auto;
+  margin-top: 50px;
+
+  background-color: none !important;
+}
+.homeText {
+  margin-top: 80px;
+  font-size: 350%;
+}
+.contact {
+  display: grid;
+  border: 1px;
+  padding: 10px 10px;
+}
+.portfolio {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 10px 10px 10px;
+}
+input,
+textarea {
+  border-radius: 5px;
+  outline: none;
+}
+.card {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  padding: 1px 8px 8px 3px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+}
+.profile {
+  width: 80vw;
+  height: 70vh;
+  margin: 10px 10px 10px 10px;
+  position: absolute;
+  overflow: hidden;
+}
+
+.items {
+  padding: 1px;
+  position: relative;
+  margin-top: 10px;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.container {
+  margin-top: 10px;
+  width: 70vw;
+  height: 70vh;
+}
+
+@media only screen and (max-width: 200px) {
+  .profile {
+    width: 50vw;
+    height: 100vh;
+  }
+
+  .contact {
+    width: 80vw;
+    overflow: hidden;
+  }
+  .item {
+    margin-right: 10px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .profile {
+    width: 90vw;
+    height: 100px;
+    overflow: hidden;
+  }
+  .portfolio {
+    flex-direction: column;
+  }
+  .contact {
+    width: 80vw;
+    overflow: hidden;
+  }
+  .item {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  /* For tablets: */
+  .profile {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .contact {
+    width: 80vw;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 375px) {
+  /* For tablets: */
+  .profile {
+    width: 50vw;
+    height: 200vh;
+  }
+
+  .contact {
+    width: 80vw;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  /* For tablets: */
+  .profile {
+    width: 50vw;
+    height: 150px;
+  }
+  .portfolio {
+    flex-direction: column;
+  }
+  .contact {
+    width: 120vw;
+    overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  /* For tablets: */
+  .profile {
+    width: 80vw;
+    height: 100vh;
+  }
+  .portfolio {
+    flex-direction: column;
+  }
+  .contact {
+    width: 120vw;
+    overflow: hidden;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  /* For tablets: */
+  .App {
+    max-width: 100%;
+  }
+  .profile {
+    width: 80vw;
+    height: 100vh;
+  }
+
+  .contact {
+    width: 120vw;
+    overflow: hidden;
+  }
+}

@@ -4,10 +4,11 @@ import { Card, CardDeck } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import BoyImg from "../boy.png";
 import emailjs from "emailjs-com";
-
+import Axios from "axios";
 function Boy() {
+  var boycount = "";
   const [state, setState] = useState({
-    gender: "It's a boy",
+    gender: "Boy",
     username: "",
   });
   const handleChange = (event) => {
@@ -31,8 +32,32 @@ function Boy() {
         }
       );
   };
+  const handleinput = (e) => {
+    if (e.target.value == "") {
+      alert("input invalid");
+    } else {
+      return e.target.value;
+    }
+  };
   const sendEmail = (e) => {
     e.preventDefault();
+    Axios.get("http://localhost:5000/boy/5f5b8ecf1e8f7290dc4c8ddc")
+      .then((res) => {
+        boycount = Number(res.data.boycount);
+        const value = {
+          boycount: boycount + 1,
+        };
+        console.log(boycount);
+
+        Axios.post(
+          "http://localhost:5000/boy/update/5f5b8ecf1e8f7290dc4c8ddc",
+          value
+        )
+          .then((res) => console.log(res))
+          .catch((err) => err);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
 
     emailjs
       .sendForm(
@@ -72,7 +97,12 @@ function Boy() {
             />
             <Card.Body>
               <label style={{ textAlign: "left" }}>Enter your Name</label>
-              <input type="text" className="inputText" name="user_name" />
+              <input
+                type="text"
+                className="inputText"
+                name="user_name"
+                required
+              />
               <input
                 type="submit"
                 value="Vote"
