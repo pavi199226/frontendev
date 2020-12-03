@@ -1,33 +1,23 @@
 import React from "react";
-import { Button, Card, Container, Row, Col } from "react-bootstrap";
-import { useState } from "react";
-import "../netflix.css";
+import { Card, Container, Row, Col } from "react-bootstrap";
+import "../display.css";
 import "../App.css";
-import Stars from "react-star-ratings";
 import StarRatings from "react-star-ratings";
-import Photos from "./Photos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCompass, faMapMarker } from "@fortawesome/free-solid-svg-icons";
+import { faCompass } from "@fortawesome/free-solid-svg-icons";
 import Iframe from "react-iframe";
-import "../App.css";
-//const SomeStars = (vote) => (
-//  <Stars
-//    stars={Math.round(vote) - 5}
-//    outOf={5}
-//    full={"#056"}
-//    empty={"#E1F1FF"}
-//    stroke={"#000"}
-//  />
-//);
+import noimage from "../noimage.png";
 const a = (data) => {
   return "http" + data[0].slice(14, 67);
 };
 
 const loc = <FontAwesomeIcon icon={faCompass} />;
-const maps = <FontAwesomeIcon icon={faMapMarker} />;
 function Cards({ address, name }) {
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE&q=${address}`;
-  const photoUrl = ``;
+  const atmUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}
+  &q=atm centers in ${address}`;
+  const hotleUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_API_KEY}
+  &q=hotels+atm in ${address}`;
+
   return (
     <div>
       <Container fluid="xs">
@@ -39,30 +29,34 @@ function Cards({ address, name }) {
             >
               <h1>Category</h1>
               <Iframe
-                url="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE&q=Space+Needle,Seattle+WA"
                 width="250px"
                 height="450px"
                 display="initial"
                 position="absolute"
-                src={mapUrl}
+                src={hotleUrl}
               />
             </div>
           </Col>
           <Col xs={9}>
             <div style={{ width: "18rem" }} className="col-md-3 box">
-              {name.map((place, index) => {
-                const uri = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&sensor=false&key=AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE`;
+              {name.map((place, key) => {
+                let uri = noimage;
+                if (place.photos) {
+                  uri = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${place.photos[0].photo_reference}&sensor=false&key=${process.env.REACT_APP_API_KEY}`;
+                }
                 return (
                   <Card
                     className="card "
                     style={{ width: "15vw", height: "auto", opacity: 0.8 }}
                   >
                     <Card.Body>
-                      <Card.Text onClick="alert('hey);">
+                      <Card.Text>
                         {
-                          <img
-                            src={uri}
-                          /> /*<Photos reference={place.photos[0].photo_reference} />*/
+                          <div>
+                            <img src={uri} />
+                          </div>
+
+                          /*<Photos reference={place.photos[0].photo_reference} />*/
                         }
                         <a href="#">
                           <strong>{place.name}</strong>
@@ -90,6 +84,9 @@ function Cards({ address, name }) {
                             starRatedColor="blue"
                           />
                         </h4>
+                        <br />
+                        <hr />
+
                         {/*  <br />
                       <hr />
                       <strong>User votes:</strong>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import axios from "axios";
 import Cards from "./components/Cards";
+import Carousel from "./components/DispCarousel";
 import {
   Button,
   Jumbotron,
@@ -26,20 +27,16 @@ class Fetch extends React.Component {
 
   handleChange = (address) => {
     this.setState({ address });
-    console.log(address);
   };
-  handleSubmit = () => {
-    const url =
-      apiurl +
-      this.state.address +
-      "+point+of+interest&language=en&key=AIzaSyDPUOSET_JlnAy_G8T1AFnMkExbJrz4UmE";
-    console.log(url);
+  handleSubmit = (event) => {
+    const url = `${apiurl}${this.state.address}+point+of+interest&language=en&key=${process.env.REACT_APP_API_KEY}`;
+    event.preventDefault();
+
     axios
       .get(url)
       .then((response) => response)
       .then((data) => {
         let places = data.data.results;
-        console.log(places);
         this.setState((prevState) => {
           return {
             ...prevState,
@@ -74,9 +71,9 @@ class Fetch extends React.Component {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
             <input
-              style={{ width: "300px" }}
+              style={{ width: "300px", backgroundColor: "white" }}
               {...getInputProps({
-                placeholder: "Search Places ...",
+                placeholder: "Search Places...",
                 className: "location-search-input",
               })}
             />
@@ -109,7 +106,9 @@ class Fetch extends React.Component {
               })}
               <hr />
 
-              {this.state.results.length === 0 ? null : (
+              {this.state.results.length === 0 ? (
+                <Carousel />
+              ) : (
                 <Cards address={this.state.address} name={this.state.results} />
               )}
             </div>

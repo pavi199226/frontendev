@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Image } from "react-bootstrap";
 import { useState } from "react";
 function Photos({ reference }) {
   const [state, setState] = useState({

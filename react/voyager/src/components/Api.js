@@ -29,7 +29,6 @@ function Api() {
   });
   const handleChange = (event) => {
     let address = event.target.value;
-
     console.log(address);
     setState((prevState) => {
       return { ...prevState, address: address };
@@ -77,11 +76,9 @@ function Api() {
     <div>
       <Navbar bg="dark" variant="dark">
         <img src={logo} className="Bimg" />
-
         <Navbar.Brand href="#home" className="title">
           Voyager
         </Navbar.Brand>
-
         <Nav className="mr-auto">
           <Nav.Link href="#home">Plan a trip</Nav.Link>
           <Nav.Link href="#features">Check Flights</Nav.Link>
@@ -89,7 +86,6 @@ function Api() {
       </Navbar>
       <Form inline>
         <Fetch address={state.inputvalue} />
-
         <Button onClick={handleSubmit} variant="outline-light">
           Search
         </Button>
